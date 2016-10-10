@@ -378,7 +378,7 @@ if($u['callback_query']){
       'chat_id'=>$chat_id,
       'message_id'=>$msg,
       'text'=>"
-Hello I'm Arrow
+Hello I'm Plus
 
 Commands :
 
