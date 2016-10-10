@@ -1,6 +1,6 @@
 <?php
 define('API_KEY', 'Your Token');
-$admin = '68747297';
+$admin = '226123856';
 function api($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -59,7 +59,7 @@ if($u['message']['text'] and $banlist->num_rows == 0){
   $msg = $u['message']['message_id'];
   $text = $u['message']['text'];
   $chat_id = $u['message']['chat']['id'];
-  if($text == '/start' or $text == '/help' or $text == '/help@Arrow_robot'){
+  if($text == '/start' or $text == '/help' or $text == '/help@pplusrbot'){
     $check = $db->query('SELECT id FROM member WHERE id='.$chat_id);
     if($check->num_rows == 0){
       $db->query('INSERT INTO member (id) VALUES ('.$chat_id.')');
@@ -67,7 +67,7 @@ if($u['message']['text'] and $banlist->num_rows == 0){
     api('sendMessage',array(
       'chat_id'=>$chat_id,
       'text'=>"
-Hello I'm Arrow
+Hello I'm Plus
 
 Commands :
 
@@ -88,8 +88,8 @@ Commands :
       'reply_markup'=>json_encode(array(
         'inline_keyboard'=>array(
           array(
-            array('text'=>'Creator','url'=>'https://telegram.me/negative'),
-            array('text'=>'Channel','url'=>'https://telegram.me/taylor_team')
+            array('text'=>'Creator','url'=>'https://telegram.me/PHAE2099'),
+            array('text'=>'Channel','url'=>'https://telegram.me/TelePlus')
           ),
           array(
             array('text'=>'فارسی 🇮🇷','callback_data'=>'fa')
@@ -399,8 +399,8 @@ Commands :
       'reply_markup'=>json_encode(array(
         'inline_keyboard'=>array(
           array(
-            array('text'=>'Creator','url'=>'https://telegram.me/negative'),
-            array('text'=>'Channel','url'=>'https://telegram.me/taylor_team')
+            array('text'=>'Creator','url'=>'https://telegram.me/PHAE2099'),
+            array('text'=>'Channel','url'=>'https://telegram.me/TelePlus')
           ),
           array(
             array('text'=>"فارسی 🇮🇷",'callback_data'=>'fa')
