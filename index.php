@@ -1,6 +1,6 @@
 <?php
-define('API_KEY', '252602938:AAEryMvkmDBqxmhK8l3gtoUkgrvu-WMwhmE');
-$admin = '226123856';
+define('API_KEY', '479999078:AAF0jeKsLkXRyzbe_ed0VzOLZsrsfS9TdzI');
+$admin = '270541145';
 function api($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
@@ -59,7 +59,7 @@ if($u['message']['text'] and $banlist->num_rows == 0){
   $msg = $u['message']['message_id'];
   $text = $u['message']['text'];
   $chat_id = $u['message']['chat']['id'];
-  if($text == '/start' or $text == '/help' or $text == '/help@pplusrbot'){
+  if($text == '/start' or $text == '/help' or $text == '/help@teleplusfun_bot'){
     $check = $db->query('SELECT id FROM member WHERE id='.$chat_id);
     if($check->num_rows == 0){
       $db->query('INSERT INTO member (id) VALUES ('.$chat_id.')');
@@ -67,7 +67,7 @@ if($u['message']['text'] and $banlist->num_rows == 0){
     api('sendMessage',array(
       'chat_id'=>$chat_id,
       'text'=>"
-Hello I'm Plus
+Hello I'm TelePlus Fun
 
 Commands :
 
@@ -347,7 +347,7 @@ if($u['callback_query']){
       'chat_id'=>$chat_id,
       'message_id'=>$msg,
       'text'=>"
-سلام من ارو هستم
+سلام من تله پلاس فان هستم
 
 دستورات :
 
@@ -378,7 +378,7 @@ if($u['callback_query']){
       'chat_id'=>$chat_id,
       'message_id'=>$msg,
       'text'=>"
-Hello I'm Plus
+Hello I'm TelePlus Fun
 
 Commands :
 
